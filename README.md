@@ -28,7 +28,7 @@ which:
 
 ### 2) Spectral weight decay (2D)
 
-For matrix parameters $W \in \mathbb{R}^{M \times N}$, spectral norm better reflects the scale relevant to activations than the Frobenius norm. Adams therefore applies **decoupled spectral weight decay** (akin to AdamW’s decoupling), replacing the usual $\|W\|_F^2$ with the spectral norm $\tfrac{1}{2}\sigma_1^2$:
+For matrix parameters $W \in \mathbb{R}^{M \times N}$, spectral norm better reflects the scale relevant to activations than the Frobenius norm. Adams therefore applies **decoupled spectral weight decay** (akin to AdamW’s decoupling), replacing the usual $\tfrac{1}{2}\|W\|_F^2$ with the spectral norm $\tfrac{1}{2}\sigma_1^2$:
 
 * We compute a one-step **power iteration** with persistent state (same idea as PyTorch’s `spectral_norm`) to approximate the top singular triplet $(u_1, \sigma_1, v_1)$.
 * The decay term is applied as $\sqrt{M}\, u_1\, \sigma_1\, v^\top_1$ (the gradient of $\tfrac{1}{2}\sigma_1^2$, scaled by $\sqrt{M}$ to match the RMS of $W$) per update step.
