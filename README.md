@@ -98,7 +98,7 @@ def train_step(model, optimizer, batch):
 Care should be taken as matrix-based optimizers (e.g. Muon).
 
 1. **Non‑matrix parameters.** Disable the matrix‑based part (spectral decay) for parameters that are scalars, vectors, or collections of vectors (e.g. LayerNorm, Embedding, Output Head, etc.) by setting `param.use_spectral_decay = False`. Adams uses a separate decoupled L2 term, controlled by `scalar_vector_weight_decay` (default `0.1`).
-2. **Batched matrices.** Parameters that are conceptually multiple matrices concatenated along leading dimensions (e.g., attention QKV projections) should be expressed with shape `(B, M, N)`. Adams treats all dimensions except the last two as batch dimensions.
+2. **Batched matrices.** Parameters that are conceptually multiple matrices concatenated along leading dimensions (e.g., attention QKV projections) should be expressed with shape `(B, M, N)`. Adams treats all dimensions except the last two as batch dimensions. （P.S. In our experiments, we treat each Attention head q,k,v as separate projection matrices. E.g. there are 24 (8 head * 3) matrices in QKV proj for 8 MHA heads）
 
 ## Practical Tips ✏️
 
