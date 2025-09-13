@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel", "setuptools-scm>=8.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adams-torch"
+dynamic = ["version"]
+description = "Adams optimizer: next-generation optimizer blending element-wise methods with matrix-aware regularization"
+readme = "README.md"
+license = "Apache-2.0"
+authors = [
+    {name = "One"}
+]
+keywords = ["pytorch", "optimizer", "deep learning", "machine learning", "spectral regularization"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "torch>=1.12.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/imoneoi/Adams"
+Repository = "https://github.com/imoneoi/Adams"
+Issues = "https://github.com/imoneoi/Adams/issues"
+
+[tool.setuptools.packages.find]
+include = ["adams*"]
+
+[tool.setuptools.package-data]
+adams = ["py.typed"]
+
+[tool.setuptools_scm]
+write_to = "adams/_version.py"
