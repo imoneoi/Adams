@@ -106,6 +106,15 @@ Care should be taken as matrix-based optimizers (e.g. Muon).
 * **Stability:** the bounded step and spectral decay together target sources of spikes linked to tiny second moments and large spectral norms.
 * **Generalization & adversarial robustness:** spectral regularization is widely observed to improve both, and Adams adopts a lightweight decoupled form.
 
+## References
+
+1. [Scaling Exponents Across Parameterizations and Optimizers](https://arxiv.org/pdf/2407.05872)
+2. [Adaptive Preconditioners Trigger Loss Spikes in Adam](https://arxiv.org/pdf/2506.04805)
+3. [Muon: An optimizer for the hidden layers of neural networks](https://github.com/KellerJordan/Muon)
+4. [Spectral Norm Regularization for Improving the
+Generalizability of Deep Learning](https://arxiv.org/pdf/1705.10941)
+5. [Thinking from spectral norm gradient to new weight decay](https://kexue.fm/archives/10648)
+
 ## License
 
 Apache-2.0
