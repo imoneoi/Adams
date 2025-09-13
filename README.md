@@ -17,7 +17,7 @@ Adams is a next-generation optimizer that blends the simplicity of element-wise 
 Small second-moment estimates are a major source of instability and loss spikes in Adam-like methods. Adams replaces the usual preconditioned step with a **bounded** update using `atan2`:
 
 $$
-\Delta \theta \propto \operatorname{atan2}\!\big(\hat m_t,\sqrt{\hat n_t}\big),
+\Delta \theta \propto \text{atan2}\big(\hat m_t,\sqrt{\hat n_t}\big),
 $$
 
 which:
